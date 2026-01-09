@@ -3,15 +3,31 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
+import Products from "./pages/Products";
+import Men from "./pages/Men";
+import Women from "./pages/Women";
+import Kids from "./pages/Kids";
+
 const App = () => {
   return (
-    <div className="bg-blue-200 h-screen w-full">
+    <div className="bg-blue-200 h-full ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/products" element={<Products />}>
+          <Route path="men" element={<Men />} />
+          <Route path="women" element={<Women />} />
+          <Route path="Kids" element={<Kids />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
