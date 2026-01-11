@@ -9,15 +9,19 @@ import Products from "./pages/Products";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import Kids from "./pages/Kids";
+import Courses from "./pages/Courses";
+import CoursesDetail from "./pages/CoursesDetail";
 
 const App = () => {
   return (
-    <div className="bg-blue-200 h-full ">
+    <div className="bg-blue-200  h-full ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CoursesDetail />} />
 
         <Route path="/products" element={<Products />}>
           <Route path="men" element={<Men />} />
